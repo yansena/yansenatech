@@ -1,0 +1,23 @@
+{
+  "Home": {
+    "title": "Home",
+    "introduce": "Olá, eu sou",
+    "name": "Yanderson Sena",
+    "shortDescription": "Sou engenheiro de software Full Stack especializado em construir boas experiências e projetos acessíveis para empresas e pessoas incríveis.",
+    "focusDescription": "Com maior experiencias em aplicativos web e mobile."
+  },
+  "About": {
+    "title": "Sobre",
+    "description": "I am a Full Stack software engineer specializing in building good experiences and affordable projects for companies and amazing people. With greater experience in web and mobile applications."
+  },
+  "Experience": {
+    "title": "Experiencias"
+  },
+  "Contact": {
+    "title": "Contato"
+  },
+  "LocaleSwitcher": {
+    "label": "Mudar Linguagem",
+    "locale": "{locale, select, pt {🇧🇷 } en {🇺🇸 } other {Unknown}}"
+  }
+}
