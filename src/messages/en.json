@@ -4,17 +4,61 @@
     "introduce": "Hello, i'm",
     "name": "Yanderson Sena",
     "shortDescription": "I am a Full Stack software engineer specializing in building good experiences and affordable projects for companies and amazing people.",
-    "focusDescription": "With greater experience in web and mobile applications."
+    "focusDescription": "With greater experience in web and mobile applications.",
+    "buttonTitle": "Contact me",
+    "cardAboutTitle": "About",
+    "cardAboutDesciption": "Learn a little more about me",
+    "cardExpTitle": "Experiences",
+    "cardExpDesciption": "Know the projects and technologies I work with"
   },
   "About": {
     "title": "About",
-    "description": "I am a Full Stack software engineer specializing in building good experiences and affordable projects for companies and amazing people. With greater experience in web and mobile applications."
+    "aboutTitle": "About.me",
+    "mainAbout": "My name is Yanderson, but my friends call me Yan, I say I’m born into technology, because when I was seven my father started working with IT, since that first contact, I stay close to technology and excited about the future of it all, After a long time doing maintenance on computers, I decided to study software development, go to college, shortly after being studying was already passionate about development and the possibilities of technology.",
+    "techTitle": "Tech.Me",
+    "aboutTech": "Currently I work as Full Stack Engenieer, accounting for 5 years using the Javascript stack with my current development tool. I specialize in React eviropment, both web and mobile.",
+    "aboutSubTech": "However I have worked with Angular, Python, PHP and Node;"
   },
-  "Experience": {
-    "title": "Experiences"
+  "Experiences": {
+    "title": "Experiences",
+    "subTitle": "Experiences.me",
+    "techTitle": "Technologies",
+    "Charrua": {
+      "jobTitle": "Senior Mobile Developer",
+      "jobPeriod": "2023-2024",
+      "jobDescription": "Development of an application for the realization of sales, treatment of budgets, maintenance of users within the agribusiness, the application treats their information asynchronously and also stores offline on the device, together with the development of the administrative web application made to support the application, manage more accurately and in detail all the information used and sent by the application."
+    },
+    "Yandeh": {
+      "jobTitle": "Middle Mobile Developer",
+      "jobPeriod": "2022-2023",
+      "jobDescription": "Work with a project to comercial area, its a app for a do selling, my responsibility it was create a new features to app, fix buggies, analise code and make her more maintainable, write unit tests and follow the deploy process."
+    },
+    "Banco do Brasil": {
+      "jobTitle": "Middle Mobile Developer",
+      "jobPeriod": "2021-2022",
+      "jobDescription": "In this Project I work analyzing the mobile application, there has moving for from two native projects, between migration has developed new features and fix bugs, after implementation and tests, does a refactoring in code, before at deploy."
+    },
+    "Secretaria de Segurança Pública": {
+      "jobTitle": "Middle Mobile Developer",
+      "jobPeriod": "2021-2021",
+      "jobDescription": "This Project has developed a Identidade Funcional for de Minister of Justice and Public Security of Brazil, making new screens based on the project design, creating tests and getting a backend integration, in this project we had a liberty of innovation for use new technologies."
+    },
+    "STG Saúde": {
+      "jobTitle": "Junior Mobile Developer",
+      "jobPeriod": "2020 - 2021",
+      "jobDescription": "In this one I needed to make plannings for applications if I had to develop, selecting used technologies, I contact designers for explain the project’s idea, or send a tiny model made in Figma, after this, it’s done the development and implementation of the features planed, together analyzing and fixing bugs."
+    }
   },
   "Contact": {
-    "title": "Contact"
+    "title": "Contact",
+    "subtitle": "Let's connect?",
+    "describe": "Hello, feel free to contact us about any project, collaborations, and job offers:",
+    "formName": "Name",
+    "formNameLabel": "What's your name?",
+    "formSubject": "Subject",
+    "formSubjectLabel": "Hey, tell me what the subject of the contact is",
+    "formMessage": "Write your message here...",
+    "formTitleButton": "Send"
   },
   "LocaleSwitcher": {
     "label": "Change language",

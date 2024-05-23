@@ -32,8 +32,7 @@ export const experiences: ExperienceProps[] = [
     title: 'Charrua',
     period: '2023-2024',
     level: `Senior Mobile Developer`,
-    description:
-      'Terceirizado na Charrua através da Agência de Dados.Desenvolvimento de uma aplicação para a realização de vendas, tratamento de orçamentos, manutenção de usuários dentro do agronegócio, a aplicação trata suas informações de forma assíncrona e também armazena de forma offline no dispositivo, juntamente com o desenvolvimento da aplicação administrativa web feita pra dar suporte ao aplicativo, gerenciar de forma mais precisa e detalhada todas as informações usadas e enviadas pela aplicação.',
+    description: `Development of an application for the realization of sales, treatment of budgets, maintenance of users within the agribusiness, the application treats their information asynchronously and also stores offline on the device, together with the development of the administrative web application made to support the application, manage more accurately and in detail all the information used and sent by the application.`,
     techs: [
       {
         name: 'React Native',
@@ -118,7 +117,7 @@ export const experiences: ExperienceProps[] = [
     id: 1,
     title: 'Yandeh',
     period: '2022-2023',
-    level: `Senior Mobile Developer`,
+    level: `Middle Mobile Developer`,
     description:
       'Work with a project to comercial area, its a app for a do selling, my responsibility it was create a new features to app, fix buggies, analise code and make her more maintainable, write unit tests and follow the deploy process.',
     techs: [

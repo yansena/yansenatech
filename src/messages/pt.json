@@ -4,17 +4,61 @@
     "introduce": "Olá, eu sou",
     "name": "Yanderson Sena",
     "shortDescription": "Sou engenheiro de software Full Stack especializado em construir boas experiências e projetos acessíveis para empresas e pessoas incríveis.",
-    "focusDescription": "Com maior experiencias em aplicativos web e mobile."
+    "focusDescription": "Com maior experiencias em aplicativos web e mobile.",
+    "buttonTitle": "Entre em contato",
+    "cardAboutTitle": "Sobre",
+    "cardAboutDesciption": "Saiba mais sobre mim",
+    "cardExpTitle": "Experiencias",
+    "cardExpDesciption": "Conheça os projetos e tecnologias que trabalho"
   },
   "About": {
     "title": "Sobre",
-    "description": "I am a Full Stack software engineer specializing in building good experiences and affordable projects for companies and amazing people. With greater experience in web and mobile applications."
+    "aboutTitle": "Sobre.me",
+    "mainAbout": "Meu nome é Yanderson, mas meus amigos me chamam de Yan, eu digo que sou nascido na tecnologia, porque quando eu tinha sete anos meu pai começou a trabalhar com TI, desde esse primeiro contato, eu me mantenho próximo da tecnologia e animado com o futuro de tudo isso, depois de muito tempo fazendo manutencao em computadores, decidi estudar desenvolvimento de software, ir para a faculdade, pouco tempo depois de estar cursando já estava apaixonado por desenvolvimento e as possibilidades da tecnologia.",
+    "techTitle": "Tech.Me",
+    "aboutTech": "Atualmente eu atuo como Full Stack Engenieer, contabilizando 5 anos usando a stack Javascript com minha ferramente atual de desenvolvimento. Sou Especializado em React eviropment, tanto web quanto mobile.",
+    "aboutSubTech": "Porem já trabalhei com Angular, Python, PHP e Node;"
   },
-  "Experience": {
-    "title": "Experiencias"
+  "Experiences": {
+    "title": "Experiencias",
+    "subTitle": "Experiencias.me",
+    "techTitle": "Tecnologias",
+    "Charrua": {
+      "jobTitle": "Desenvolvedor de Softwares Senior",
+      "jobPeriod": "2023-2024",
+      "jobDescription": "Desenvolvimento de uma aplicação para a realização de vendas, tratamento de orçamentos, manutenção de usuários dentro do agronegócio, a aplicação trata suas informações de forma assíncrona e também armazena de forma offline no dispositivo, juntamente com o desenvolvimento da aplicação administrativa web feita pra dar suporte ao aplicativo, gerenciar de forma mais precisa e detalhada todas as informações usadas e enviadas pela aplicação."
+    },
+    "Yandeh": {
+      "jobTitle": "Desenolvedor Mobile Pleno",
+      "jobPeriod": "2022-2023",
+      "jobDescription": "Desenvolvimento de um aplicativo voltado para o comercio, como realização de pedidos, acompanhamento de status, registro de visitas, cadastro de clientes, agenda de atendimentos e informações do vendedor."
+    },
+    "Banco do Brasil": {
+      "jobTitle": "Desenolvedor Mobile Pleno",
+      "jobPeriod": "2021-2022",
+      "jobDescription": "Atuei alocado no Banco do Brasil, nos time do aplicativo de cartão de crédito do banco (Ourocard) e na loja de aplicativos do app principal ( Loja BB / App BB), onde pude fazer correções de bugs, análise para melhoria de códigos, implementação de destes unitários e desenvolvimento de novas telas e funcionalidades."
+    },
+    "Secretaria de Segurança Pública": {
+      "jobTitle": "Desenolvedor Mobile Pleno",
+      "jobPeriod": "2021-2021",
+      "jobDescription": "Atuei no projeto de desenvolvimento do Identidade Funcional do MJSP, desenvolvendo as telas propostas nos protótipos, implementando testes de funcionalidade, integrações com o backend, validação de endpoint, no projeto tínhamos a liberdade de inovação de tecnologias usadas no frontend de aplicações móveis."
+    },
+    "STG Saúde": {
+      "jobTitle": "Desenolvedor Mobile Junior",
+      "jobPeriod": "2020 - 2021",
+      "jobDescription": "Fazer planejamento de aplicação, desenho de interfaces usando Figma, desenvolvimento e implementação de funcionalidades, manutenção e correção de erros e desenvolvimento de aplicativos multiplataforma."
+    }
   },
   "Contact": {
-    "title": "Contato"
+    "title": "Contato",
+    "subtitle": "Vamos se conectar ?",
+    "describe": "Olá sinta-se a vontade para nos contactar sobre qualquer projeto, colaboracoes e ofertas de trabalho:",
+    "formName": "Nome",
+    "formNameLabel": "Qual seu nome",
+    "formSubject": "Assunto",
+    "formSubjectLabel": "Opa me fala qual o assunto do contato",
+    "formMessage": "Escreva sua messagem aqui...",
+    "formTitleButton": "Enviar"
   },
   "LocaleSwitcher": {
     "label": "Mudar Linguagem",

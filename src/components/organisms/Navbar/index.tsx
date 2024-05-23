@@ -9,12 +9,20 @@ import { useTranslations } from 'next-intl'
 
 function Navbar() {
   const path = usePathname()
+  // const locale = useLocale()
   const t = useTranslations()
+
+  // const cleanedPath =
+  //   path === `/${locale}`
+  //     ? path.replace(`/${locale}`, '/')
+  //     : path.replace(`/${locale}/`, '')
+
+  // console.log('🚀 ~ Navbar ~ cleanedPath:', cleanedPath)
 
   const NAV_LINKS = [
     { label: t('Home.title'), href: '/' },
     { label: t('About.title'), href: '/about' },
-    { label: t('Experience.title'), href: '/exp' },
+    { label: t('Experiences.title'), href: '/exp' },
     { label: t('Contact.title'), href: '/contact' },
   ]
 

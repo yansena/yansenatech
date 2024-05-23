@@ -11,10 +11,13 @@ import {
 } from 'react-icons/fi'
 
 import { experiences } from './experience-data'
+import { useTranslations } from 'next-intl'
 
 function Exp() {
   const [selectedPosition, setSelectedPosition] =
     useState<ExperienceProps | null>(null)
+
+  const t = useTranslations('Experiences')
 
   function renderExperience(exp: ExperienceProps) {
     if (exp.title === selectedPosition?.title) {
@@ -36,7 +39,7 @@ function Exp() {
       </div>
       <div className="ml-10 w-[70vh] text-purple-50">
         <div className=" mb-4  flex flex-row items-center justify-center">
-          <h1 className="text-2xl font-bold">Experiencias.me</h1>
+          <h1 className="text-2xl font-bold">{t('subTitle')}</h1>
           <FiCoffee className="ml-2 text-2xl" />
         </div>
         <div className="flex flex-col">
@@ -61,29 +64,26 @@ function Exp() {
           )}
         </div>
         <>
-          {experiences.map((exp) => {
-            if (exp.title === selectedPosition?.title) {
-              return (
-                <>
-                  <div key={exp.id}>
-                    <div>
-                      <h2 className="flex flex-row items-center">
-                        <FiTerminal className="mr-2" />
-                        {exp.level}
-                      </h2>
-                      <h3>{exp.period}</h3>
-                    </div>
-                    <p className="text-justify">{exp.description}</p>
-                  </div>
-                </>
-              )
-            }
-            return null
-          })}
+          {selectedPosition && (
+            <div>
+              <div className="mb-2 flex flex-row items-center">
+                <h2 className="flex flex-row items-center text-xl font-semibold">
+                  <FiTerminal className="mr-2" />
+                  {t(`${selectedPosition.title}.jobTitle`)}
+                </h2>
+                <h3 className="ml-4 text-xl font-semibold">
+                  {t(`${selectedPosition.title}.jobPeriod`)}
+                </h3>
+              </div>
+              <p className="text-justify">
+                {t(`${selectedPosition.title}.jobDescription`)}
+              </p>
+            </div>
+          )}
           <>
             {selectedPosition && (
               <div className="my-4">
-                <h1 className="text-lg font-bold">Technologias:</h1>
+                <h1 className="text-lg font-bold">{t('techTitle')}:</h1>
               </div>
             )}
 

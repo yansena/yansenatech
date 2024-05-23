@@ -1,6 +1,8 @@
 'use client'
 
 import { zodResolver } from '@hookform/resolvers/zod'
+import { CircularProgress } from '@mui/material'
+import { useTranslations } from 'next-intl'
 import { useState } from 'react'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { z } from 'zod'
@@ -23,6 +25,8 @@ function Mail() {
   const [data, setData] = useState<MailFormSchema | null>(null)
   const [loading, setLoading] = useState<boolean>(false)
 
+  const t = useTranslations('Contact')
+
   const {
     register,
     handleSubmit,
@@ -33,10 +37,6 @@ function Mail() {
 
   const onSubmit: SubmitHandler<MailFormSchema> = async (data) => {
     console.log(data)
-  }
-
-  const sendEmail = async () => {
-    setLoading(true)
 
     fetch('/api/emails', {
       method: 'POST',
@@ -57,6 +57,10 @@ function Mail() {
       })
   }
 
+  const sendEmail = async () => {
+    setLoading(true)
+  }
+
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
@@ -64,22 +68,22 @@ function Mail() {
     >
       <div className={inputContainerStyle}>
         <label htmlFor="name" className={inputLabelStyle}>
-          Nome:
+          {t('formName')}
         </label>
         <input
           {...register('name')}
           className={inputStyle}
-          placeholder="Seu nome"
+          placeholder={t('formNameLabel')}
         />
       </div>
       <div className={inputContainerStyle}>
         <label htmlFor="name" className={inputLabelStyle}>
-          Assunto:
+          {t('formSubject')}
         </label>
         <input
           {...register('subject')}
           className={inputStyle}
-          placeholder="Qual o assunto?"
+          placeholder={t('formSubjectLabel')}
         />
       </div>
       <div className={inputContainerStyle}>
@@ -87,7 +91,7 @@ function Mail() {
           className="text-secondary placeholder:text-medium-gray mb-6 mt-4 h-52 w-full resize-none rounded-xl bg-gray-500/30 p-6 text-base font-normal text-gray-300 outline-[0.5px] focus:outline focus:outline-gray-500 sm:h-80"
           {...register('content')}
           autoComplete="off"
-          placeholder="Escreva sua mensagem aqui..."
+          placeholder={t('formMessage')}
           required
         />
       </div>
@@ -97,7 +101,11 @@ function Mail() {
           onClick={sendEmail}
           className="mt-4 rounded-md border-gray-400 bg-slate-600/50 p-4 font-bold text-indigo-50 hover:bg-slate-500/40 hover:text-gray-300"
         >
-          {loading ? 'fasdas' : `Enviar`}
+          {loading ? (
+            <CircularProgress color="inherit" size="sm" />
+          ) : (
+            `${t('formTitleButton')}`
+          )}
         </button>
       </div>
     </form>
