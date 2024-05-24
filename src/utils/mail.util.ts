@@ -29,9 +29,9 @@ export const sendEmail = (dto: SendEmailDto) => {
 
   return transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
-      console.error(error)
+      return error.message
     } else {
-      console.log('Email sent: ' + info.response)
+      return info.response
     }
   })
 }
