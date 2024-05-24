@@ -55,6 +55,8 @@
     "describe": "Hello, feel free to contact us about any project, collaborations, and job offers:",
     "formName": "Name",
     "formNameLabel": "What's your name?",
+    "formEmail": "Email",
+    "formEmailLabel": "What's your email?",
     "formSubject": "Subject",
     "formSubjectLabel": "Hey, tell me what the subject of the contact is",
     "formMessage": "Write your message here...",

@@ -1,21 +1,23 @@
 import { sendEmail } from '@/utils/mail.util'
 
-export async function POST(request: Request) {
-  console.log('Sending email...')
+export async function POST(req: Request) {
+  // const { body } = req
+  // const body = JSON.parse(req.body)
 
-  const params = request.body?.getReader()
+  const data = await req.json()
 
-  console.log('🚀 ~ params:', params)
+  console.log('🚀 ~ POST ~ data:', data)
+  // console.log('🚀 ~ POST ~ body:', req.body)
 
   const sender = {
-    name: 'John Doe',
+    name: data.name,
     address: 'no-reply@yansena.tech',
   }
 
   const receipient = [
     {
-      name: 'Jane Doe',
-      address: 'jane-doe@yansena.tech',
+      name: 'Yanderson Sena',
+      address: 'sena@yansena.tech',
     },
   ]
 
@@ -23,11 +25,9 @@ export async function POST(request: Request) {
     const result = await sendEmail({
       sender,
       receipient,
-      subject: 'Hello',
-      message: 'Hello, world!',
+      subject: `${data.subject} - ${data.email}`,
+      message: data.content,
     })
-
-    console.log('🚀 ~ POST route ~ result:', result)
 
     return Response.json({
       message: 'Email sent successfully.',

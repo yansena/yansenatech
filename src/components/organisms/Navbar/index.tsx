@@ -17,8 +17,6 @@ function Navbar() {
   //     ? path.replace(`/${locale}`, '/')
   //     : path.replace(`/${locale}/`, '')
 
-  // console.log('🚀 ~ Navbar ~ cleanedPath:', cleanedPath)
-
   const NAV_LINKS = [
     { label: t('Home.title'), href: '/' },
     { label: t('About.title'), href: '/about' },

@@ -15,6 +15,7 @@ const inputStyle =
 
 const mailFormSchema = z.object({
   name: z.string(),
+  email: z.string().email(),
   subject: z.string(),
   content: z.string(),
 })
@@ -22,7 +23,6 @@ const mailFormSchema = z.object({
 type MailFormSchema = z.infer<typeof mailFormSchema>
 
 function Mail() {
-  const [data, setData] = useState<MailFormSchema | null>(null)
   const [loading, setLoading] = useState<boolean>(false)
 
   const t = useTranslations('Contact')
@@ -36,29 +36,21 @@ function Mail() {
   })
 
   const onSubmit: SubmitHandler<MailFormSchema> = async (data) => {
-    console.log(data)
+    // e.preventDefault()
+    console.log({ data })
 
     fetch('/api/emails', {
       method: 'POST',
       body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json',
+      },
     })
-      .then((res) => {
-        console.log('🚀 ~ .then - Main - Index ~ res:', res)
-        res.json()
-      })
-      .then((data) => {
-        setData(data)
-      })
-      .catch((error) => {
-        console.error('🚀 ~ .catch ~ error:', error)
-      })
+      .then()
+      .catch()
       .finally(() => {
         setLoading(false)
       })
-  }
-
-  const sendEmail = async () => {
-    setLoading(true)
   }
 
   return (
@@ -74,6 +66,16 @@ function Mail() {
           {...register('name')}
           className={inputStyle}
           placeholder={t('formNameLabel')}
+        />
+      </div>
+      <div className={inputContainerStyle}>
+        <label htmlFor="email" className={inputLabelStyle}>
+          {t('formEmail')}
+        </label>
+        <input
+          {...register('email')}
+          className={inputStyle}
+          placeholder={t('formEmailLabel')}
         />
       </div>
       <div className={inputContainerStyle}>
@@ -98,11 +100,11 @@ function Mail() {
       {errors.name && <span>This field is required</span>}
       <div className="flex w-full flex-1 flex-row justify-end">
         <button
-          onClick={sendEmail}
+          type="submit"
           className="mt-4 rounded-md border-gray-400 bg-slate-600/50 p-4 font-bold text-indigo-50 hover:bg-slate-500/40 hover:text-gray-300"
         >
           {loading ? (
-            <CircularProgress color="inherit" size="sm" />
+            <CircularProgress color="inherit" />
           ) : (
             `${t('formTitleButton')}`
           )}

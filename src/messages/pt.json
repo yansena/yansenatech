@@ -55,6 +55,8 @@
     "describe": "Olá sinta-se a vontade para nos contactar sobre qualquer projeto, colaboracoes e ofertas de trabalho:",
     "formName": "Nome",
     "formNameLabel": "Qual seu nome",
+    "formEmail": "Email",
+    "formEmailLabel": "Qual seu email?",
     "formSubject": "Assunto",
     "formSubjectLabel": "Opa me fala qual o assunto do contato",
     "formMessage": "Escreva sua messagem aqui...",
