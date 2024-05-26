@@ -1,11 +1,12 @@
 'use client'
 
-import { zodResolver } from '@hookform/resolvers/zod'
-import { CircularProgress } from '@mui/material'
-import { useTranslations } from 'next-intl'
-import { useState } from 'react'
-import { useForm, SubmitHandler } from 'react-hook-form'
 import { z } from 'zod'
+import { useState } from 'react'
+import { motion } from 'framer-motion'
+import { useTranslations } from 'next-intl'
+import { CircularProgress } from '@mui/material'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { useForm, SubmitHandler } from 'react-hook-form'
 
 const inputContainerStyle =
   'flex w-full flex-row items-center border-b border-gray-600 py-2'
@@ -56,7 +57,12 @@ function Mail() {
       onSubmit={handleSubmit(onSubmit)}
       className="flex flex-col overflow-hidden rounded-lg border border-gray-600 bg-gray-900/50 p-4 "
     >
-      <div className={inputContainerStyle}>
+      <motion.div
+        className={inputContainerStyle}
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 0.3 }}
+      >
         <label htmlFor="name" className={inputLabelStyle}>
           {t('formName')}
         </label>
@@ -65,8 +71,13 @@ function Mail() {
           className={inputStyle}
           placeholder={t('formNameLabel')}
         />
-      </div>
-      <div className={inputContainerStyle}>
+      </motion.div>
+      <motion.div
+        className={inputContainerStyle}
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 0.5 }}
+      >
         <label htmlFor="email" className={inputLabelStyle}>
           {t('formEmail')}
         </label>
@@ -75,8 +86,13 @@ function Mail() {
           className={inputStyle}
           placeholder={t('formEmailLabel')}
         />
-      </div>
-      <div className={inputContainerStyle}>
+      </motion.div>
+      <motion.div
+        className={inputContainerStyle}
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 0.8 }}
+      >
         <label htmlFor="name" className={inputLabelStyle}>
           {t('formSubject')}
         </label>
@@ -85,8 +101,13 @@ function Mail() {
           className={inputStyle}
           placeholder={t('formSubjectLabel')}
         />
-      </div>
-      <div className={inputContainerStyle}>
+      </motion.div>
+      <motion.div
+        className={inputContainerStyle}
+        initial={{ scale: 0, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ delay: 1 }}
+      >
         <textarea
           className="text-secondary placeholder:text-medium-gray mb-6 mt-4 h-52 w-full resize-none rounded-xl bg-gray-500/30 p-6 text-base font-normal text-gray-300 outline-[0.5px] focus:outline focus:outline-gray-500 sm:h-80"
           {...register('content')}
@@ -94,10 +115,13 @@ function Mail() {
           placeholder={t('formMessage')}
           required
         />
-      </div>
+      </motion.div>
       {errors.name && <span>This field is required</span>}
       <div className="flex w-full flex-1 flex-row justify-end">
-        <button
+        <motion.button
+          initial={{ y: 100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 1.2 }}
           type="submit"
           className="mt-4 rounded-md border-gray-400 bg-slate-600/50 p-4 font-bold text-indigo-50 hover:bg-slate-500/40 hover:text-gray-300"
         >
@@ -106,7 +130,7 @@ function Mail() {
           ) : (
             `${t('formTitleButton')}`
           )}
-        </button>
+        </motion.button>
       </div>
     </form>
   )

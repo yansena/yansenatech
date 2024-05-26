@@ -12,6 +12,7 @@ import {
 
 import { experiences } from './experience-data'
 import { useTranslations } from 'next-intl'
+import { motion } from 'framer-motion'
 
 function Exp() {
   const [selectedPosition, setSelectedPosition] =
@@ -26,9 +27,23 @@ function Exp() {
     setSelectedPosition(exp)
   }
 
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        delayChildren: 0.5,
+      },
+    },
+  }
+
   return (
     <div className="flex flex-1 flex-row justify-evenly rounded-lg bg-gray-500/5 p-8 backdrop-blur-3xl">
-      <div>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ type: 'spring', duration: 0.5 }}
+      >
         <Image
           src={'/projects.svg'}
           width={100}
@@ -36,13 +51,23 @@ function Exp() {
           alt="Experience Image"
           className="h-[28rem] w-[28rem] sm:w-[25rem] md:w-[40rem]"
         />
-      </div>
+      </motion.div>
       <div className="ml-10 w-[70vh] text-purple-50">
-        <div className=" mb-4  flex flex-row items-center justify-center">
+        <motion.div
+          initial={{ opacity: 0, y: -1000 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ type: 'spring', bounce: 0.5, duration: 1 }}
+          className=" mb-4  flex flex-row items-center justify-center"
+        >
           <h1 className="text-2xl font-bold">{t('subTitle')}</h1>
           <FiCoffee className="ml-2 text-2xl" />
-        </div>
-        <div className="flex flex-col">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ type: 'spring', bounce: 0.5, duration: 1, delay: 0.5 }}
+          className="flex flex-col"
+        >
           {experiences.map((experience) => {
             return (
               <button
@@ -57,7 +82,7 @@ function Exp() {
               </button>
             )
           })}
-        </div>
+        </motion.div>
         <div className="flex w-full justify-end">
           {selectedPosition !== null && (
             <FiCornerRightDown className="text-4xl" />
@@ -65,7 +90,11 @@ function Exp() {
         </div>
         <>
           {selectedPosition && (
-            <div>
+            <motion.div
+              initial={{ opacity: 0, y: -100 }}
+              animate={{ opacity: 1, y: 0 }}
+              variants={container}
+            >
               <div className="mb-2 flex flex-row items-center">
                 <h2 className="flex flex-row items-center text-xl font-semibold">
                   <FiTerminal className="mr-2" />
@@ -78,7 +107,7 @@ function Exp() {
               <p className="text-justify">
                 {t(`${selectedPosition.title}.jobDescription`)}
               </p>
-            </div>
+            </motion.div>
           )}
           <>
             {selectedPosition && (
@@ -91,13 +120,20 @@ function Exp() {
               {selectedPosition &&
                 selectedPosition.techs.map((tech, index) => {
                   return (
-                    <div
+                    <motion.a
+                      href={
+                        tech.url
+                          ? tech.url
+                          : `http://www.google.com?search=${tech.name}`
+                      }
+                      target="_blank"
+                      whileHover={{ scale: 1.1 }}
                       key={index}
                       className="flex flex-col items-center justify-center rounded-lg bg-slate-700/30 p-4 text-purple-50"
                     >
                       <tech.icons className={`${tech.color} mb-2 text-5xl`} />
                       <p className="text-center">{tech.name}</p>
-                    </div>
+                    </motion.a>
                   )
                 })}
             </div>
