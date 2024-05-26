@@ -42,9 +42,6 @@ export default function Home() {
 
           <motion.a
             whileTap={{ scale: 0.9 }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1 }}
             href="/contact"
             className=" flex w-auto flex-row items-center justify-center rounded-lg border-gray-400/20 bg-slate-500/30 p-4"
           >
