@@ -37,8 +37,6 @@ function Mail() {
 
   const onSubmit: SubmitHandler<MailFormSchema> = async (data) => {
     // e.preventDefault()
-    console.log({ data })
-
     fetch('/api/emails', {
       method: 'POST',
       body: JSON.stringify(data),

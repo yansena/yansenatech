@@ -4,18 +4,18 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { GitHub, LinkedIn } from '@mui/icons-material'
 import { twMerge } from 'tailwind-merge'
-import LocaleSwitcher from '@/components/molecules/LocaleSwitcher'
-import { useTranslations } from 'next-intl'
+import { LocaleSwitcher } from '@/components/molecules'
+import { useLocale, useTranslations } from 'next-intl'
 
 function Navbar() {
-  const path = usePathname()
-  // const locale = useLocale()
+  const path = usePathname() || ''
+  const locale = useLocale()
   const t = useTranslations()
 
-  // const cleanedPath =
-  //   path === `/${locale}`
-  //     ? path.replace(`/${locale}`, '/')
-  //     : path.replace(`/${locale}/`, '')
+  const cleanedPath =
+    path === `/${locale}`
+      ? path.replace(`/${locale}`, '/')
+      : path.replace(`/${locale}`, '')
 
   const NAV_LINKS = [
     { label: t('Home.title'), href: '/' },
@@ -26,7 +26,10 @@ function Navbar() {
 
   return (
     <>
-      <header className="max-w-limit fixed  flex w-full items-center justify-center p-7">
+      <header
+        className="max-w-limit fixed  flex w-full items-center justify-center p-7"
+        data-testid="nav-bar"
+      >
         <div className="flex w-full flex-1 flex-row items-center justify-between gap-4 rounded-xl border border-gray-700/20 bg-gray-700/30 p-4  shadow-md backdrop-blur-lg">
           <div className="flex flex-1 items-center">
             <ul
@@ -44,7 +47,7 @@ function Navbar() {
                 />
               </Link>
               {NAV_LINKS.map(({ label, href }) => {
-                const isActive = path === href
+                const isActive = cleanedPath === href
                 return (
                   <li key={href}>
                     <Link

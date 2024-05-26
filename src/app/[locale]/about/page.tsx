@@ -25,7 +25,7 @@ function About() {
             src={'/programming.svg'}
             width={100}
             height={100}
-            alt="about"
+            alt="programing image"
             className="w-[0rem] sm:w-[25rem] md:w-[45rem]"
           />
         </div>

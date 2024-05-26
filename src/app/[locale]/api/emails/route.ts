@@ -1,13 +1,7 @@
 import { sendEmail } from '@/utils/mail.util'
 
 export async function POST(req: Request) {
-  // const { body } = req
-  // const body = JSON.parse(req.body)
-
   const data = await req.json()
-
-  console.log('🚀 ~ POST ~ data:', data)
-  // console.log('🚀 ~ POST ~ body:', req.body)
 
   const sender = {
     name: data.name,
@@ -28,6 +22,8 @@ export async function POST(req: Request) {
       subject: `${data.subject} - ${data.email}`,
       message: data.content,
     })
+
+    console.log('🚀 ~ POST ~ result:', result)
 
     return Response.json({
       message: 'Email sent successfully.',

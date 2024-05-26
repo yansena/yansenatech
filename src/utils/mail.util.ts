@@ -1,3 +1,4 @@
+import { MailReturn } from '@/types'
 import nodemailer from 'nodemailer'
 import Mail from 'nodemailer/lib/mailer'
 import SMTPTransport from 'nodemailer/lib/smtp-transport'
@@ -19,7 +20,7 @@ export type SendEmailDto = {
   message: string
 }
 
-export const sendEmail = (dto: SendEmailDto) => {
+export const sendEmail = (dto: SendEmailDto): MailReturn => {
   const mailOptions = {
     from: dto.sender,
     to: dto.receipient,
@@ -27,13 +28,25 @@ export const sendEmail = (dto: SendEmailDto) => {
     text: dto.message,
   }
 
-  return transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      return error.message
+  let status: MailReturn = {} as MailReturn
+
+  transporter.sendMail(mailOptions, (error, info) => {
+    // console.log('🚀 ~ returntransporter.sendMail ~ info:', info)
+    // console.log('🚀 ~ returntransporter.sendMail ~ error:', error)
+    if (error !== null) {
+      return (status = {
+        type: 'error',
+        message: error.message,
+      })
     } else {
-      return info.response
+      return (status = {
+        type: 'success',
+        message: info.response,
+      })
     }
   })
+
+  return status
 }
 
 export const sendEmailPromise = () => {

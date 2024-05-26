@@ -40,6 +40,7 @@ export default function LocaleSwitcherSelect({
         'relative text-gray-400',
         isPending && 'transition-opacity [&:disabled]:opacity-30',
       )}
+      data-testid="locale-switcher-select"
     >
       <p className="sr-only">{label}</p>
       <select

@@ -33,8 +33,7 @@ export default async function RootLayout({
       <body
         className={`${popins.className} min-h relative flex flex-col items-center overflow-x-hidden bg-gray-900  antialiased`}
       >
-        <NextIntlClientProvider messages={messages}>
-          {/* <QueryClientProvider client={queryClient}> */}
+        <NextIntlClientProvider messages={messages} locale={locale}>
           <Image
             src={'/wallpaper.png'}
             alt="backgroud image"
@@ -47,7 +46,6 @@ export default async function RootLayout({
             <main className="flex-grow">{children}</main>
           </div>
           <Navbar />
-          {/* </QueryClientProvider> */}
         </NextIntlClientProvider>
       </body>
     </html>

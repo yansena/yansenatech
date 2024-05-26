@@ -9,12 +9,18 @@ export default function Home() {
     <div className="rounded-lg bg-gray-500/5 p-8 backdrop-blur-3xl">
       <section className="mb-32 flex flex-row">
         <div className="relative flex flex-col sm:mb-60">
-          <h1 className="mb-8 text-3xl font-bold text-slate-400 sm:text-4xl md:text-5xl">
+          <h1
+            className="mb-8 text-3xl font-bold text-slate-400 sm:text-4xl md:text-5xl"
+            data-testid="home-title"
+          >
             {t('introduce')} <br />
             <strong className="font-bold text-gray-100"> {t('name')}</strong>
           </h1>
 
-          <p className="mb-10 max-w-[730px] text-justify text-sm text-purple-100 md:text-lg">
+          <p
+            className="mb-10 max-w-[730px] text-justify text-sm text-purple-100 md:text-lg"
+            title="descriptions"
+          >
             {t('shortDescription')} <br />
             {t('focusDescription')}
           </p>
