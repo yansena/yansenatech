@@ -1,8 +1,7 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 import { screen, render } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import DetailCard from '../index'
-import Link from 'next/link'
 import { vi } from 'vitest'
 
 vi.mock('next/link', () => {

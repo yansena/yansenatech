@@ -3,11 +3,10 @@ import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 import { DetailCard } from '@/components/molecules'
 import { BsPersonBadge, BsStack } from 'react-icons/bs'
-import { motion, useScroll } from 'framer-motion'
+import { motion } from 'framer-motion'
 
 export default function Home() {
   const t = useTranslations('Home')
-  const { scrollYProgress } = useScroll()
 
   return (
     <motion.div className="rounded-lg bg-gray-500/5 p-8 backdrop-blur-3xl">

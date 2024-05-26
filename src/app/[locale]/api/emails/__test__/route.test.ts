@@ -1,6 +1,6 @@
-import { render, screen, fireEvent } from '@testing-library/react' // Ou '@testing-library/svelte', etc.
+// import { render, screen, fireEvent } from '@testing-library/react' // Ou '@testing-library/svelte', etc.
 import { sendEmail } from '@/utils/mail.util'
-import { POST } from '../route'
+// import { POST } from '../route'
 // import { json } from '@remix-run/node'
 import { vi } from 'vitest'
 
