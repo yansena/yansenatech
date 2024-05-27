@@ -20,7 +20,8 @@ export type SendEmailDto = {
   message: string
 }
 
-export const sendEmail = (dto: SendEmailDto): MailReturn => {
+export const sendEmail = (dto: SendEmailDto) => {
+  // const { setMailReturnData } = useContact()
   const mailOptions = {
     from: dto.sender,
     to: dto.receipient,
@@ -28,25 +29,25 @@ export const sendEmail = (dto: SendEmailDto): MailReturn => {
     text: dto.message,
   }
 
-  let status: MailReturn = {} as MailReturn
+  const status: MailReturn = {} as MailReturn
 
-  transporter.sendMail(mailOptions, (error, info) => {
-    // console.log('🚀 ~ returntransporter.sendMail ~ info:', info)
-    // console.log('🚀 ~ returntransporter.sendMail ~ error:', error)
-    if (error !== null) {
-      return (status = {
-        type: 'error',
-        message: error.message,
-      })
+  return transporter.sendMail(mailOptions, (error, info) => {
+    if (info === null) {
+      // setMailReturnData({
+      //   type: 'error',
+      //   message: `${error}`,
+      // })
+      console.log('🚀 ~ returntransporter.sendMail ~ error:', error)
+      return status
     } else {
-      return (status = {
-        type: 'success',
-        message: info.response,
-      })
+      console.log('🚀 ~ returntransporter.sendMail ~ info:', info)
+      // setMailReturnData({
+      //   type: 'success',
+      //   message: info.response,
+      // })
+      return status
     }
   })
-
-  return status
 }
 
 export const sendEmailPromise = () => {

@@ -8,6 +8,7 @@ import { getMessages, getLocale } from 'next-intl/server'
 
 import { Navbar } from '@/components/organisms'
 import './globals.css'
+import ContactProvider from './context-provider'
 
 const popins = Poppins({
   weight: ['100', '400', '600', '900'],
@@ -33,20 +34,22 @@ export default async function RootLayout({
       <body
         className={`${popins.className} min-h relative flex flex-col items-center overflow-x-hidden bg-gray-900  antialiased`}
       >
-        <NextIntlClientProvider messages={messages} locale={locale}>
-          <Image
-            src={'/wallpaper.png'}
-            alt="backgroud image"
-            className="absolute bottom-0 left-0 right-0 top-0 -z-10 h-full w-full object-cover"
-            width={100}
-            height={100}
-          />
+        <ContactProvider>
+          <NextIntlClientProvider messages={messages} locale={locale}>
+            <Image
+              src={'/wallpaper.png'}
+              alt="backgroud image"
+              className="absolute bottom-0 left-0 right-0 top-0 -z-10 h-full w-full object-cover"
+              width={100}
+              height={100}
+            />
 
-          <div className="max-w-limit flex w-full flex-col px-4 pb-32 pt-24 sm:pt-48 ">
-            <main className="flex-grow">{children}</main>
-          </div>
-          <Navbar />
-        </NextIntlClientProvider>
+            <div className="max-w-limit flex w-full flex-col px-4 pb-32 pt-24 sm:pt-48 ">
+              <main className="flex-grow">{children}</main>
+            </div>
+            <Navbar />
+          </NextIntlClientProvider>
+        </ContactProvider>
       </body>
     </html>
   )

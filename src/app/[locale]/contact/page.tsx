@@ -6,6 +6,7 @@ import { motion } from 'framer-motion'
 
 function Contact() {
   const t = useTranslations('Contact')
+
   return (
     <div className="flex flex-1 flex-col justify-evenly rounded-lg bg-gray-500/5 p-8 backdrop-blur-3xl">
       <motion.div

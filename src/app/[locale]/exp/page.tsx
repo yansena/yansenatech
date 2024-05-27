@@ -128,6 +128,9 @@ function Exp() {
                       }
                       target="_blank"
                       whileHover={{ scale: 1.1 }}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 0.5 + index * 0.1 }}
                       key={index}
                       className="flex flex-col items-center justify-center rounded-lg bg-slate-700/30 p-4 text-purple-50"
                     >

@@ -1,12 +1,12 @@
 'use client'
 
 import { z } from 'zod'
-import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 import { CircularProgress } from '@mui/material'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm, SubmitHandler } from 'react-hook-form'
+import { useContact } from '@/data/context/contact'
 
 const inputContainerStyle =
   'flex w-full flex-row items-center border-b border-gray-600 py-2'
@@ -24,9 +24,11 @@ const mailFormSchema = z.object({
 type MailFormSchema = z.infer<typeof mailFormSchema>
 
 function Mail() {
-  const [loading, setLoading] = useState<boolean>(false)
-
   const t = useTranslations('Contact')
+
+  const { sendEmail, loading } = useContact()
+
+  console.log('🚀 ~ Contact ~ loading:', loading)
 
   const {
     register,
@@ -38,18 +40,7 @@ function Mail() {
 
   const onSubmit: SubmitHandler<MailFormSchema> = async (data) => {
     // e.preventDefault()
-    fetch('/api/emails', {
-      method: 'POST',
-      body: JSON.stringify(data),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-      .then()
-      .catch()
-      .finally(() => {
-        setLoading(false)
-      })
+    sendEmail(data)
   }
 
   return (

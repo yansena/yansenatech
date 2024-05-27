@@ -14,7 +14,7 @@ function DetailCard({
   return (
     <Link
       href={href}
-      className="relative flex aspect-square w-full max-w-[500px] flex-col items-center overflow-hidden rounded-lg bg-slate-600/20 pt-16 shadow-2xl"
+      className="relative flex aspect-square h-[60vh] w-full max-w-[500px] flex-col items-center overflow-hidden rounded-lg bg-slate-600/20 pt-16 shadow-2xl sm:h-[40vh] md:h-[60vh]"
     >
       <span className="mb-4 text-6xl font-semibold text-purple-100 sm:text-4xl md:text-4xl">
         {title}

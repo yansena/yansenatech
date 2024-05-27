@@ -1,6 +1,7 @@
 import { sendEmail } from '@/utils/mail.util'
+import { NextRequest } from 'next/server'
 
-export async function POST(req: Request) {
+export async function POST(req: NextRequest) {
   const data = await req.json()
 
   const sender = {
@@ -23,7 +24,7 @@ export async function POST(req: Request) {
       message: data.content,
     })
 
-    console.log('🚀 ~ POST ~ result:', result)
+    // console.log('🚀 ~ POST ~ result:', result)
 
     return Response.json({
       message: 'Email sent successfully.',
